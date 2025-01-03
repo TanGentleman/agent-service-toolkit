@@ -9,6 +9,7 @@ class Provider(StrEnum):
     GROQ = auto()
     AWS = auto()
     FAKE = auto()
+    TAN = auto()
 
 
 class OpenAIModelName(StrEnum):
@@ -30,6 +31,7 @@ class GoogleModelName(StrEnum):
     """https://ai.google.dev/gemini-api/docs/models/gemini"""
 
     GEMINI_15_FLASH = "gemini-1.5-flash"
+    GEMINI_2_EXP = "gemini-2.0-flash-exp"
 
 
 class GroqModelName(StrEnum):
@@ -53,6 +55,14 @@ class FakeModelName(StrEnum):
     FAKE = "fake"
 
 
+class TanModelName(StrEnum):
+    """Tan model for testing."""
+
+    LLAMA = "Llama-3.3-70B"
+    LMSTUDIO = "lmstudio/qwen2.5-7b-instruct"
+    SAMBANOVA = "sambanova/Qwen2.5-72B-Instruct"
+
+
 AllModelEnum: TypeAlias = (
     OpenAIModelName
     | AnthropicModelName
@@ -60,4 +70,5 @@ AllModelEnum: TypeAlias = (
     | GroqModelName
     | AWSModelName
     | FakeModelName
+    | TanModelName
 )
